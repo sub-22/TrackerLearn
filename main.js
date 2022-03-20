@@ -101,7 +101,7 @@ function fetchTasks() {
     var status = tasks[i].status;
 
     tasksList.innerHTML += '<div class="well">' +
-                        '<h6>Issue ID: ' + id + '</h6>' +
+                        '<h6>Task ID: ' + id + '</h6>' +
                         '<p><span class="label label-info status-'+id+'">' + status + '</span></p>' +
                         '<h3>' + "Title: " + title + '</h3>' +
                         '<p><span class="glypicon glypicon-time"></span>' + 'Serverity: ' + severity + '</p>' +
