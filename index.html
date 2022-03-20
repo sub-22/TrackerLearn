@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="main.css">
   </head>
-  <body onload="fetchIssues()">
+  <body onload="fetchTasks()">
     <section class="main">
       <div class="container">
         <h1 class="text-center" style="color: white;">Tracker Learning<small> by Tung & Tuan</small></h1>
@@ -17,7 +17,6 @@
             <div class="form-group">
               <label for="task_title">Title</label>
               <input type= text" class="form-control" id="task_title" placeholder="Title task..." required="true">
-              <div class="form_error"></div>
             </div>
             <div class="form-group">
               <label for="task_severity">Severity</label>
@@ -29,7 +28,7 @@
             </div>
             <div class="form-group">
               <label for="task_description">Description Task</label>
-              <input type="text" class="form-control" id="task_description" required="true" placeholder="Description task...">
+              <input type="text" class="form-control" id="task_description" placeholder="Description task..." required="true">
             </div>
             <button type="submit" class="btn btn-primary">Add Task</button>
           </form>
