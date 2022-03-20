@@ -62,7 +62,6 @@ function setStatusClosed(id) {
   var tasks = JSON.parse(localStorage.getItem('tasks'));
   for (var i = 0; i < tasks.length; i++) {
     if (tasks[i].id == id) {
-      debugger
       tasks[i].status = 'Closed';
       $(".close-" + id).hide();
       $(".open-" + id).show();
