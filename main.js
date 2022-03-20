@@ -29,7 +29,7 @@ function saveTask(e) {
 
   document.getElementById('task_form').reset();
 
-  fetchIssues();
+  fetchTasks();
 
   e.preventDefault();
 }
@@ -43,7 +43,7 @@ function deleteIssue(id) {
   }
 
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  fetchIssues();
+  fetchTasks();
 }
 
 function setStatusDone(id) {
@@ -55,7 +55,7 @@ function setStatusDone(id) {
   }
 
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  fetchIssues();
+  fetchTasks();
 }
 
 function setStatusClosed(id) {
@@ -70,7 +70,7 @@ function setStatusClosed(id) {
   }
 
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  fetchIssues();
+  fetchTasks();
 }
 
 function setStatusOpen(id) {
@@ -84,10 +84,10 @@ function setStatusOpen(id) {
   }
 
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  fetchIssues();
+  fetchTasks();
 }
 
-function fetchIssues() {
+function fetchTasks() {
   var tasks = JSON.parse(localStorage.getItem('tasks'));
 
   var tasksList = document.getElementById('task_list');
@@ -139,7 +139,7 @@ function stopTime(id){
   clearTimeout(timeout);
   $(".start-" + id).show();
   $(".stop-" + id).hide();
-  fetchIssues();
+  fetchTasks();
   h = null;
   m = null;
   s = null;
@@ -196,7 +196,7 @@ function startTime(id) {
       alert('The task be done');
       $(".start-" + id).show();
       $(".stop-" + id).hide();
-      fetchIssues();
+      fetchTasks();
       h = null;
       m = null;
       s = null;
