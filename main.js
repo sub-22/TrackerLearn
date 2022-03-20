@@ -34,7 +34,7 @@ function saveTask(e) {
   e.preventDefault();
 }
 
-function deleteIssue(id) {
+function deleteTask(id) {
   var tasks = JSON.parse(localStorage.getItem('tasks'));
   for (var i = 0; i < tasks.length; i++) {
     if (tasks[i].id == id) {
@@ -108,7 +108,7 @@ function fetchTasks() {
                         '<p><span class="glypicon glypicon-user"></span>' + 'Description: ' + description + '</p>' +
                         '<a href="#" onclick="setStatusClosed(\''+id+'\')" class="btn btn-warning close-'+id+'">Close</a>' +
                         '<a href="#" onclick="setStatusOpen(\''+id+'\')" class="btn btn-warning open-'+id+'">Open</a>' +
-                        '<a href="#" onclick="deleteIssue(\''+id+'\')" class="btn btn-danger" style="margin: 20px">Delete</a>' +
+                        '<a href="#" onclick="deleteTask(\''+id+'\')" class="btn btn-danger" style="margin: 20px">Delete</a>' +
                         '<a href="#" onclick="startTime(\''+id+'\')" class="btn btn-primary start-'+id+'">Start</a>' +
                         '<a href="#" onclick="stopTime(\''+id+'\')" class="btn btn-primary stop-'+id+'">Stop</a>' +
                           '<div id="time_input">' +
