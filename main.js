@@ -131,7 +131,7 @@ function fetchTasks() {
   }
 }
 
-function stopTime(id){
+function stopTime(id) {
   clearTimeout(timeout);
   $(".start-" + id).show();
   $(".stop-" + id).hide();
@@ -148,6 +148,9 @@ var m = null;
 var s = null;
 var timeout = null;
 
+var toast = document.querySelector(".toasts");
+var audio = new Audio("ring.mp3");
+
 function startTime(id) {
   var hours = $("#h_val-" + id).val();
   var minutes = $("#m_val-" + id).val();
@@ -162,12 +165,12 @@ function startTime(id) {
       s = parseInt(second);
     }
 
-    if(s === -1){
+    if(s === -1) {
       m -= 1;
       s = 59;
     }
 
-    if(m === -1){
+    if(m === -1) {
       h -= 1;
       m = 59;
     }
@@ -191,9 +194,11 @@ function startTime(id) {
       document.getElementById('s-' + id).innerText = s.toString();
     }
 
-    if (h == 0 && m == 0 && s == 0){
+    if(h == 0 && m == 0 && s == 0) {
       clearTimeout(timeout);
-      alert('The task be done');
+      audio.play();
+      $(".toasts").show();
+      toast.classList.remove("disable");
       $(".start-" + id).show();
       $(".stop-" + id).hide();
       fetchTasks();
@@ -205,12 +210,17 @@ function startTime(id) {
       return false;
     }
 
-    timeout = setTimeout(function(){
+    timeout = setTimeout(function() {
       s--;
       startTime(id);
     }, 1000);
   } else {
-    alert("You must be input time for starting");
+    alert("You must be input time before start counting");
   }
 }
 
+$(".btn-close").click(function() {
+  $(".toasts").hide();
+  audio.pause();
+  audio.currentTime = 0;
+});
