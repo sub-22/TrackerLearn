@@ -1,7 +1,7 @@
 
 document.getElementById('task_form').addEventListener('submit', saveTask);
 
-function saveTask(e) {
+function saveTask() {
   var task_title = document.getElementById('task_title').value;
   var task_servertity = document.getElementById('task_severity').value;
   var task_description = document.getElementById('task_description').value;
@@ -29,8 +29,6 @@ function saveTask(e) {
   document.getElementById('task_form').reset();
 
   fetchTasks();
-
-  e.preventDefault();
 }
 
 function deleteTask(id) {
