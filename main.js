@@ -151,13 +151,17 @@ var s = null;
 var timeout = null;
 
 function startTime(id) {
-  if($("#s_val-" + id).val().length != 0) {
+  var hours = $("#h_val-" + id).val();
+  var minutes = $("#m_val-" + id).val();
+  var second = $("#s_val-" + id).val();
+
+  if(hours.length != 0 || minutes.length != 0 || second.length != 0) {
     $(".start-" + id).hide();
     $(".stop-" + id).show();
     if(h === null) {
-      h = parseInt($("#h_val-" + id).val())
-      m = parseInt($("#m_val-" + id).val())
-      s = parseInt($("#s_val-" + id).val())
+      h = parseInt(hours);
+      m = parseInt(minutes);
+      s = parseInt(second);
     }
 
     if(s === -1){
@@ -207,6 +211,8 @@ function startTime(id) {
       s--;
       startTime(id);
     }, 1000);
+  } else {
+    alert("You must be input time for starting");
   }
 }
 

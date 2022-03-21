@@ -6,10 +6,6 @@
   min-height: 100vh;
 }
 
-#dong_ho #thoi_gian{
-  display:flex;
-}
-
 #time {
   position: relative;
   display: flex;
@@ -34,4 +30,3 @@
   z-index: 3;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 20%);
 }
-
