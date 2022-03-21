@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  position: relative;
 }
 
 #time {
@@ -29,4 +30,38 @@
   font-size: 5rem;
   z-index: 3;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 20%);
+}
+
+.toasts{
+  position: absolute;
+  background-color: #fff;
+  top: 20px;
+  right: 20px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 250px;
+  text-align: left;
+}
+.toast-header{
+border-bottom: 1px solid black;
+padding: 10px 10px 0px 10px;
+font-weight: bold;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+background-color: #3a57fa;
+color: #fff;
+}
+.toast-body{
+  padding: 10px;
+}
+.btn-close{
+  border: none;
+  background-color: #3a57fa;
+}
+.disable{
+  display: none;
+}
+.display{
+  display: block
 }
