@@ -16,11 +16,10 @@ function saveTask(e) {
     status: task_status
   }
 
-  var tasks = [];
-
   if (localStorage.getItem('tasks') == null) {
+    var tasks = [];
     tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(task));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   } else {
     var tasks = JSON.parse(localStorage.getItem('tasks'));
     tasks.push(task);
